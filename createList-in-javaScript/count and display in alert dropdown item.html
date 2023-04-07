@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Count and Display in Alert box! </title>
+        <style>
+           button {
+        background-color: rgb(23, 230, 23);
+        width: 120px;
+        height: 30px;
+        color: white;
+        font-size:13px;
+    }
+    button:hover {
+        background-color: rgb(249, 44, 8);
+    }
+        </style>
+    </head>
+<body>
+
+    <form>
+        <select id="mySelect">
+            
+            <option>Pakistan</option>
+            <option>India</option>
+            <option>China</option>
+            <option>Iran</option>
+            <option>Australia</option>
+            <option>England</option>
+            <option>Japan</option>
+            <option>Newzeland</option>
+        </select>
+    </form>
+    <br>
+    <button onclick="countItem()">Count and Display</button>
+
+    <script>
+        function countItem() {
+        let dropdownList = document.getElementById("mySelect");   //Fetch its parent id...
+        let itemCount = dropdownList.options.length;
+
+        alert( " This is the Total Options in the List = " + itemCount);
+    }
+    </script>
+</body>
+
+</html>

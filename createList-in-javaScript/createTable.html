@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Create a TABLE</p> <br>
+    <button onclick="myFunction()">Create Table</button><br><br>
+    <button onclick="myCreateFunction()">Insert row</button><br><br>
+    <button onclick="myDeleteFunction()">Delete row</button><br><br>
+
+    <script>
+
+        function myFunction() {
+            var x = document.createElement("table");
+            x.setAttribute("id", "myTable");        //given id to table....
+            document.body.appendChild(x);         // append with the parent body....
+
+            //given tr to the row part
+            for (i = 0; i <= 3; i++) {
+
+                var trs = document.createElement("TR");
+                var trId = "trId" + i;
+
+                trs.setAttribute("id", trId);
+                document.getElementById("myTable").appendChild(trs);  //append with the parent fetch....
+
+                for (j = 0; j < 3; j++) {
+
+                    var tds = document.createElement("TD");
+                    var cellValue = document.createTextNode("cell");
+
+                    tds.appendChild(cellValue);  //columns are the parent of cells....
+
+                    document.getElementById(trId).appendChild(tds);     //columns append with rows...
+                }
+            }
+
+        }
+        function myCreateFunction() {
+            let table = document.getElementById("myTable");
+            let row = table.insertRow(0);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            cell1.innerHTML = "cell 1";
+            cell2.innerHTML = "CELL2";
+            cell3.innerHTML = "CELL3";
+
+        }
+
+        function myDeleteFunction() {
+            document.getElementById("myTable").deleteRow(0);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+    <html>
+
+<head>
+    <title>Document</title>
+    <style type="text/css"> 
+    button {
+        background-color: rgb(23, 230, 23);
+        width: 120px;
+        height: 30px;
+        color: white;
+        font-size:13px;
+    }
+    button:hover {
+        background-color: rgb(249, 44, 8);
+    }
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <select id="mySelect">
+            <option>Pakistan</option>
+            <option>India</option>
+            <option>China</option>
+            <option value="">Iran</option>
+        </select>
+    </form>
+    Enter option: <br /> <input type="text" id="t1" />
+    <button onclick="myFunction()">Insert option</button> <br/> <br/>
+
+    Delete Item:  <button onclick="removeItem()">Delete Item</button>
+
+    <script>
+        function myFunction() {
+            let seclectEl = document.getElementById("mySelect");
+            let optionCreate = document.createElement("option");
+            let inputVal = document.getElementById("t1").value;
+
+            optionCreate.text = inputVal;   //text is like innerHTML....
+            // optionCreate.value = inputVal;
+            seclectEl.appendChild(optionCreate);   //appendChild to the parent fetch.. (child_name)
+            document.getElementById("t1").value = "";
+        }
+
+        function removeItem() {
+            let listEl = document.getElementById("mySelect");
+            listEl.remove(listEl.selectedIndex);    // in number you can delete.....
+        }
+    </script>
+</body>
+
+</html>
