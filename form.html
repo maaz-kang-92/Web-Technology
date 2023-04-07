@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>Form Related! </title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Student Information: </legend>
+            <!-- readonly, placeholder="_____" -->
+            <!-- maxlength is related to text value but size is related to box size -->
+            First Name: <br />
+            <input type="text" name="firstName" placeholder="Enter First Name" value="Muhammad" readonly> <br />
+
+            Last Name: <br />
+            <input type="text" name="lastName" placeholder="Enter Second Name" maxlength="5"> <br />
+
+            Fixed Value: <br />
+            <input type="text" name="lastName" value="Kang" disabled size="13"> <br />
+
+            <!-- Step means jump from 0 to 10 to 20 maximum till 50 -->
+            <!-- The min and max attributes work with the following input types: 
+            number,range, date, datetime-local, month, time and week. -->
+            Roll No: <br />
+            <input type="number" step="10" max="50" min="-50"> <br />
+
+            Date: <br />
+            <input type="date" name="datemax_min" min="2020-02-01" max="2030-02-21"> <br />
+
+            <!-- multiple (store more than one value) -->
+            File <br />
+            <input type="file" id="files" name="files" multiple> <br />
+
+            <!-- pattern -->
+            CNIC: <br />
+            <input type="text" name="country_code" pattern="[0-9]{5}-[0-9]{8}-[0-9]{1}"> <br />
+            Check Gender: <br />
+            Male:
+            <input type="radio" name="gender" checked>
+            Female:
+            <input type="radio" name="gender">
+            Shemale:
+            <input type="radio" name="gender"> <br />
+            How Many vehicle you have? <br />
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked>
+            I have a bike: <br />
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            I have a car: <br />
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            I have a boat <br />
+            Select Course for Admission: <br />
+            <select name="select_courses">
+                <option value="BS Information Technology">BS Information Technology</option>
+                <option value="BS BS Computer Science">BS Computer Science </option>
+                <option value="BS Biology" selected>BS Biology </option>
+                <option value="BS Chemistry">BS Chemistry</option>
+                <option value="BS Physics">BS Physics</option>
+            </select> <br />
+            Please Chose Your Country: <br />
+            <select size="3" multiple> <!--hold down window + ctrl-->
+                <optgroup label="Asia_Country">
+                    <option value="pak">Pakistan</option>
+                    <option value="ind">India</option>
+                    <option value="nepal">Nepal</option>
+                    <option value="bangla" selected>Bangladesh</option>
+                    <option value="china" disabled>China</option>
+                </optgroup>
+                <optgroup label="Europe_Country">
+                    <option value="usa">USA</option>
+                    <option value="italy">Italy</option>
+                    <option value="german">Germany</option>
+                    <option value="canada">Canada</option>
+                    <option value="france">France</option>
+                </optgroup>
+            </select> <br/>
+            Please Choose Color: <br/>
+            <input type="color" value="color"> <br/>
+            TextArea: <br/>
+            <textarea rows="10" cols="13">This is my Car! </textarea> <br/>
+            Please Enter Your Password: <br/>
+            <input type="password" name="password" maxlength="8"> <br/>
+            Select Your Range: <br/>
+            <input type="range" name="range" value="50"> <br/>
+            Hidden: <br/>
+            <input type="hidden"> <br/>
+            Date Time Local: <br/>
+            <input type="datetime-local" name="birthdaytime"> <br/>
+            Month: <br/>
+            <input type="month"  name="bdaymonth"> <br/>
+            Reset Button: <br/>
+            <input type="reset" name="reset"> <br/>
+            Submit Button: <br/>
+            <input type="submit" name="submit"> <br/>
+
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
