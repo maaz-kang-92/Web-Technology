@@ -1,0 +1,102 @@
+<!-- <html>
+
+<head>
+    <title> Form Values Pick </title>
+</head>
+
+<body>
+    <form name="myForm" action="/action_page.php" onsubmit="validateForm()" method="post">
+        Name: <input type="text" name="fname"/>
+        <input type="submit" value="Submit" />
+    </form>
+    <p id="demo"></p>
+    <script>
+        function validateForm() {
+
+            // this is how to Fetch the value in the form....
+            let fNameValue = document.forms["myForm"]["fname"].value
+            let paraEl = document.getElementById("demo")
+
+            if (fNameValue == "") {
+                alert(" Please Enter the Value of fname ")
+    
+                return false;     //optional
+            }
+            else {
+                paraEl.innerHTML = fNameValue
+                document.forms["myForm"]["fname"].value = ""
+                paraEl.style.backgroundColor = "red"
+                paraEl.style.color = "white"
+                paraEl.style.width = "40%"
+                
+            }
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!--  this is the setAttributes.......
+ It is possible to add a style attribute with a value to an element, but it is not recommended because it can
+overwrite other properties in the style attribute. -->
+<html>
+
+<head id="headId">
+    <title>Set Attributes of the HTML (through HTML DOM)</title>
+</head>
+
+<body>
+    <h1>The Element Object</h1>
+    <h2>The setAttribute() Method</h2>
+    Convert it into Button: <input type="text" id="input1" value="OK" /> <br /> <br />
+
+    <a id="instagram">maaz_kang_92 </a> <br /> <br />
+
+    <!-- there is no difference in _self and _parent -->
+    <h4>It will changed _self target to _blank target </h4>
+    <a href="http://www.google.com" id="myA" target="_self">Open Google</a> <br /> <br />
+
+    <button onclick="convert()">Convert setAttribute</button>  <br/> <br/>
+ 
+    <!-- it will increased the size of the body -->
+    <button onclick="myFunction()">Create Child</button>
+
+    <script>
+        function convert() {
+            let inputEl = document.getElementById("input1")
+            let instagramEl = document.getElementById("instagram")
+            let myAEl = document.getElementById("myA")
+            //this is for button.......
+            inputEl.setAttribute("type", "button")
+            inputEl.style.backgroundColor = "green"
+            inputEl.style.color = "white"
+            inputEl.style.width = "130px"
+            inputEl.style.height = "24px"
+
+            //this is for link of instagram.....
+            instagramEl.setAttribute("href", "https://www.instagram.com/maaz_kang_92/")
+
+            //this is for target.....
+            if (myAEl.hasAttribute("target")) {
+                myAEl.setAttribute("target", "_blank")
+            } else {
+                alert("No Contain any Target")
+            }
+        }
+
+        //this is for Create Element.......
+        function myFunction() {
+           
+            let styleChildofHead = document.createElement("style")
+            let TextNodeofStyle = document.createTextNode("body{font: 20px verdana;}")
+           
+            styleChildofHead.appendChild(TextNodeofStyle)
+           
+            // document.getElementById("headId").appendChild(x); //append style(child) to head id
+            document.head.appendChild(styleChildofHead)
+        }
+
+    </script>
+</body>
+
+</html>

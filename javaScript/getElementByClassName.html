@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>getElementByClassName</title>
+</head>
+<style>
+   div {
+      border: 1px solid black;
+      padding: 8px;
+   }
+   .color4 {
+      background-color: yellow;
+   }
+</style>
+
+<body>
+   <div class="example">
+      <p>This is a paragraph.</p>
+   </div>
+   <br />
+   
+   <!-- there are two different classes here with the name of example and color1 -->
+   <div class="example color1">
+      <p>This is a paragraph.</p>
+   </div>
+   <br />
+   <div class="example color1">
+      <p>This is a paragraph.</p>
+   </div>
+   <br />
+   <div class="example color1">
+      <p>This is a paragraph.</p>
+   </div>
+   <br />
+   <div class="example color4">
+      <p>This is a paragraph.</p>
+   </div>
+
+
+   <script>
+      let i = 1
+      // color1 has 3 classes or 3 childs........ 
+      let exampleEl = document.getElementsByClassName("color1")
+      exampleEl[i].style.backgroundColor = "green"
+      exampleEl[i].style.color = "white"
+      exampleEl[i].style.fontSize = "34px"
+   </script>
+</body>
+
+</html>

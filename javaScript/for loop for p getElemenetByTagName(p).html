@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>getElementByTagName(p)</title>
+</head>
+
+<body>
+    <p>This is the Paragraph No:1 </p>
+    <p>This is the Paragraph No:2</p>
+    <p>This is the Paragraph No:3</p>
+    <p>This is the Paragraph No:4</p>
+    <p>This is the Paragraph No:5</p>
+    <p>This is the Paragraph No:6</p>
+    <h4 id="demo"></h4>
+    <script>
+        let pEl = document.getElementsByTagName("p")
+        let demoEl = document.getElementById("demo")
+
+        // getElementsByTagName("*") returns all elements in the document.
+        let allEl = document.getElementsByTagName("*");
+        let tags = ""
+        for (i = 0; i < pEl.length; i++) {
+            pEl[i].style.backgroundColor = "red"
+            pEl[1].style.backgroundColor = "green"
+            pEl[3].style.backgroundColor = "green"
+            pEl[i].style.color = "#fff"
+            pEl[i].style.height = "40px"
+            pEl[i].style.fontSize = "24px"
+           
+        }
+        for (i = 0; i < allEl.length; i++) {
+            tags += allEl[i].tagName + "<br>"
+        }
+        demoEl.innerHTML += tags
+        
+    </script>
+</body>
+
+</html>

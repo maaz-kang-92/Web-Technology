@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Create a table in javaScript</title>
+    <style>
+        td,
+        tr {
+            border: 1px solid rgb(66, 59, 59);
+            padding: 14px;
+
+        }
+
+
+        table {
+            border: 1px solid rgb(66, 59, 59);
+            /* border-collapse: collapse; */
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- body is the parent of those tags that have no parents like form, table, select, ul and so on 
+    those must be append to the body as a child..........-->
+    <button onclick="myFunction()">Create Table</button><br><br>
+    <button onclick="insertRow()">Insert Row</button><br><br>
+    <button onclick="deleteRow()">Delete Row</button><br><br>
+    <button onclick="show()">Show Date</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            let createTable = document.createElement("TABLE")
+            createTable.setAttribute("id", "myTable")
+            //append the table with its parent body..
+            document.body.appendChild(createTable)
+
+            for (i = 0; i <= 3; i++) {
+
+                //create rows and then append with the table.....
+                let createTr = document.createElement("tr")
+                // to unique every tr (trId is a string variable)....
+                let trId = "trid" + i
+                //set the id to every row.....
+                createTr.setAttribute("id", trId)
+                //fetch the id of the table...
+                let tableEl = document.getElementById("myTable")
+                tableEl.appendChild(createTr)
+
+                for (j = 0; j < 3; j++) {
+                    //now create columns and append them into its parent trs..
+                    let createTd = document.createElement("td")
+                    let createCell = document.createTextNode("Cell")
+                    createTd.appendChild(createCell)
+                    //trId is a id's for every rows..
+                    document.getElementById(trId).appendChild(createTd)
+                }
+            }
+        }
+        //how to insert rows into the table...
+        function insertRow() {
+            let tableEl = document.getElementById("myTable")
+            let row = tableEl.insertRow(1)
+            // three cells in one row....
+            let cell1 = row.insertCell(0)
+            let cell2 = row.insertCell(1)
+            let cell3 = row.insertCell(2)
+            // cells value...
+            cell1.innerHTML = "Maaz"
+            cell2.innerHTML = "Saad"
+            cell3.innerHTML = "Talha"
+        }
+        function deleteRow() {
+            document.getElementById("myTable").deleteRow(0);
+        }
+
+        //show date....
+        function show() {
+            var d = new Date();
+            d.setFullYear(2024);
+
+            document.getElementById("demo").innerHTML = d;
+        }
+    </script>
+</body>
+
+</html>

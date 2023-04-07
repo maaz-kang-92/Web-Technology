@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>javaScript_1st</title>
+    
+</head>
+
+<body>
+    <h3> These Paragraphs are with getElementByTagName() </h3>
+    <p id="p1">This is the Paragraph No: 1</p>
+    <p>This is the Paragraph No: 2</p>
+    <p id="p3">This is the Paragraph No: 3</p>
+    <p>This is the Paragraph No: 4</p>
+    <p>This is the Paragraph No: 5</p>
+    <p>This is the Paragraph No: 6</p>
+    <p>The number of paragraphs (p elements) are:</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <h3> These Paragraphs are with Class Name: </h3>
+    <p>This is the Paragraph No: 1</p>
+    <p class="example">This is the Paragraph No: 2</p>
+    <p class="example">This is the Paragraph No: 3</p>
+    <p class="example">This is the Paragraph No: 4</p>
+    <p>This is the Paragraph No: 5</p>
+    <p>This is the Paragraph No: 6</p>
+    <p>The number of paragraphs (p elements) are:</p>
+    <p class="demo"></p>
+    <p class="demo1"></p>
+
+
+    <script>
+        //getElementById.......
+        let p1 = document.getElementById("p1")
+        p1.style.backgroundColor = "green"
+        p1.style.color = "white"
+        p1.style.height = "30px"
+        p1.style.width = "50%"
+
+        //getElementByTagName........
+        let elements = document.getElementsByTagName("p")
+        document.getElementById("demo").innerHTML = elements.length
+
+        let collection = document.getElementsByTagName("p");
+
+        //paragraph 1 content pick and store into text.....
+        // The item() method returns the element at a specified index in an HTMLCollection.
+        let text = collection.item(0).innerHTML;
+        document.getElementById("demo").innerHTML = text;
+
+        // must take the specific index of the paragraph...
+        let changed = document.getElementsByTagName("p")[1];
+
+        //second item will contain with "Change!"
+        changed.innerHTML += " = Changed!";
+
+        changed.style.backgroundColor = "red"
+        changed.style.color = "white"
+
+        // pick the index with the id or name attribute (nameItem).....
+        let p3 = document.getElementsByTagName("p")
+        
+        // object HTML paragraph picked here not value......
+        let value = p3.namedItem("p3");  
+
+        let demo1 = document.getElementById("demo1")
+        demo1.innerHTML = value.innerHTML          //gives the value of p3 with innerHTML...
+        demo1.style.backgroundColor = "brown"
+        demo1.style.color = "white"
+
+        // getElementByClassName()........
+        let c1 = document.getElementsByClassName("example")[2];     //3rd index of the example class....
+        c1.style.backgroundColor = "#000"
+        c1.style.color = "#fff"
+        c1.style.width = "50%"
+        c1.style.height = "30px"
+
+    </script>
+</body>
+
+</html>

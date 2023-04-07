@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <title>Attributes</title>
+  <style>
+    
+    .removeClass {
+      color: red;
+      font-size: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Attributes are those within the Tags of HTML</h3>
+
+  <!-- fetch can be with the tag (p) by using getElementByTagName. -->
+  <p class="removeClass"> Remove the Class of this Paragraph </p>
+  <button onclick="removeAttribute1()">Remove Attribute</button> <br /><br />
+
+  <img id="myImg" src="child.jpg" alt="This is the Image of Children!" width="500px" height="500px"> <br /> <br />
+  <button onclick="changeWidth()" onclick="changeHeight()">Change width</button>
+  <p id="demo"></p>
+
+  <!--  -->
+
+  <!-- hasAttribute of the paragrpah2 -->
+  <p id="para2">hasAttribute</p>
+
+  <p id="demo1">True/False</p>
+  <p id="demo2">True/False</p>
+  <script>
+    let imgEl = document.getElementById("myImg")
+
+    function changeWidth() {
+
+      imgEl.setAttribute("width", "400")
+      imgEl.setAttribute("height", "400")
+
+
+    }
+
+    //getAttribute....
+    let src = imgEl.getAttribute("src")  //name of the img...
+    let demoEl = document.getElementById("demo")
+    demoEl.innerHTML = src
+    demoEl.style.fontSize = "50px"
+
+    //removeAttributes....(remove the class attribute and its property also)
+    function removeAttribute1() {
+      document.getElementsByTagName("P")[0].removeAttribute("class")
+    }
+
+    //hasAttribute.......(attribute hai ya nahe)
+    let paraEl2 = document.getElementById("para2");
+
+    let answer1 = paraEl2.hasAttribute("class");  //Paragrpah2 hasAttribute of class or not..
+    document.getElementById("demo1").innerHTML += " = " + answer1;
+
+    let answer2 = document.body.hasAttributes();  // to check the overall "s" include in attribute
+    document.getElementById("demo2").innerHTML += " = " + answer2;
+
+  </script>
+</body>
+
+</html>
